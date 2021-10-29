@@ -30,7 +30,7 @@ class EasyMLApp extends StatelessWidget {
         locale,
       ],
       title: 'Easy ML',
-      home: const HomePage(),
+      home: HomePage(),
     );
   }
 }
