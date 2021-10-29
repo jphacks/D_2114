@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "125716004824",
+    "project_id": "siapit",
+    "storage_bucket": "siapit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:125716004824:android:207ed9571bae123c1f3cad",
+        "android_client_info": {
+          "package_name": "com.example.easy_ml"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "125716004824-douu188hh9qerks69iav3uo0p0as7mjo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCi0iAeXqaL6JYVNDb4hr-c2iBwNSemEgY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "125716004824-douu188hh9qerks69iav3uo0p0as7mjo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "125716004824-3sqcemts221milm604p5915digeok6g1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.siapit"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:125716004824:android:50b94d9c8e30afe11f3cad",
+        "android_client_info": {
+          "package_name": "com.example.siapit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "125716004824-douu188hh9qerks69iav3uo0p0as7mjo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCi0iAeXqaL6JYVNDb4hr-c2iBwNSemEgY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "125716004824-douu188hh9qerks69iav3uo0p0as7mjo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "125716004824-3sqcemts221milm604p5915digeok6g1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.siapit"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
