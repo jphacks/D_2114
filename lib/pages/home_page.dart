@@ -24,10 +24,10 @@ class _HomePageState extends State<HomePage> {
             FirebaseFirestore.instance.collection('collection01').snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasData) {
-            List<Map> actualData =
-                (snapshot.data!.docs[0].data() as Map)["data"];
-            List<Map> predictedResult =
+            List actualData = (snapshot.data!.docs[0].data() as Map)["data"];
+            List predictedResult =
                 (snapshot.data!.docs[1].data() as Map)["forecast"];
+            print(predictedResult);
 
             return Stack(
               children: [
@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> {
                           ? SizedBox(
                               height: 300,
                               width: deviceWidth,
-                              child: chartBody(),
+                              child: chartBody(actualData, predictedResult),
                             )
                           : Text(
                               "データがありません",
