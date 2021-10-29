@@ -29,39 +29,24 @@ Widget chartBody(List actualData, List predictedData) {
   return charts.TimeSeriesChart(
     seriesList,
     animate: true,
-    // Optionally pass in a [DateTimeFactory] used by the chart. The factory
-    // should create the same type of [DateTime] as the data provided. If none
-    // specified, the default creates local date time.
     dateTimeFactory: const charts.LocalDateTimeFactory(),
-
-    /// This is an OrdinalAxisSpec to match up with BarChart's default
-    /// ordinal domain axis (use NumericAxisSpec or DateTimeAxisSpec for
-    /// other charts).
     domainAxis: charts.DateTimeAxisSpec(
       renderSpec: charts.SmallTickRendererSpec(
-        // Tick and Label styling here.
         labelStyle: charts.TextStyleSpec(
-          fontSize: 14, // size in Pts.
+          fontSize: 14,
           color: charts.ColorUtil.fromDartColor((Colors.grey[400])!),
         ),
-
-        // Change the line colors to match text color.
         lineStyle: charts.LineStyleSpec(
           color: charts.ColorUtil.fromDartColor((Colors.grey[200])!),
         ),
       ),
     ),
-
-    /// Assign a custom style for the measure axis.
     primaryMeasureAxis: charts.NumericAxisSpec(
       renderSpec: charts.GridlineRendererSpec(
-        // Tick and Label styling here.
         labelStyle: charts.TextStyleSpec(
-          fontSize: 14, // size in Pts.
+          fontSize: 14,
           color: charts.ColorUtil.fromDartColor((Colors.grey[400])!),
         ),
-
-        // Change the line colors to match text color.
         lineStyle: charts.LineStyleSpec(
           color: charts.ColorUtil.fromDartColor((Colors.grey[200])!),
         ),

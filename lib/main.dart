@@ -26,6 +26,7 @@ class EasyMLApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
+      theme: ThemeData.dark(),
       supportedLocales: const [
         locale,
       ],
