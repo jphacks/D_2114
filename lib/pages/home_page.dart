@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:easy_ml/charts/chart_widget.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -18,12 +19,16 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       backgroundColor: Colors.blue,
-      body: StreamBuilder(
+      body: StreamBuilder<QuerySnapshot>(
         stream:
             FirebaseFirestore.instance.collection('collection01').snapshots(),
-        builder: (context, snapshot) {
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasData) {
-            var document = snapshot.data;
+            List<Map> actualData =
+                (snapshot.data!.docs[0].data() as Map)["data"];
+            List<Map> predictedResult =
+                (snapshot.data!.docs[1].data() as Map)["forecast"];
+
             return Stack(
               children: [
                 Container(
@@ -40,8 +45,29 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Text(
                         "お風呂",
-                        style: TextStyle(),
+                        style: TextStyle(
+                          fontSize: 30,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      (actualData.length != 0)
+                          ? SizedBox(
+                              height: 300,
+                              width: deviceWidth,
+                              child: chartBody(),
+                            )
+                          : Text(
+                              "データがありません",
+                              style: TextStyle(
+                                fontSize: 30,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                     ],
                   ),
                 ),

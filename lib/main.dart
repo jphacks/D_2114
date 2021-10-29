@@ -3,6 +3,7 @@ import 'package:easy_ml/pages/home_page.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,11 +16,20 @@ class EasyMLApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const locale = Locale("ja", "JP");
     return MaterialApp(
+      debugShowCheckedModeBanner: false, // デバッグ用の帯を消す
+      // 日本語用設定
+      locale: locale,
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        locale,
+      ],
       title: 'Easy ML',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: const HomePage(),
     );
   }
