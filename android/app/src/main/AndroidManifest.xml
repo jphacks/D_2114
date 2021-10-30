@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.easy_ml">
    <application
-        android:label="easy_ml"
+        android:label="EasyPred"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
