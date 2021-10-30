@@ -116,17 +116,17 @@ class _HomePageState extends State<HomePage> {
                             ],
                           ),
                           SizedBox(
-                            height: 30,
+                            height: 25,
                           ),
                           (actualData.length != 0)
                               ? Container(
                                   padding: EdgeInsets.only(
-                                      top: 10, bottom: 10, left: 10, right: 0),
+                                      top: 5, bottom: 10, left: 10, right: 0),
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
                                     color: Color(0xFF1B1B1F),
                                   ),
-                                  height: 270,
+                                  height: 245,
                                   width: deviceWidth,
                                   child: chartBody(actualData, predictedData),
                                 )
@@ -139,7 +139,11 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ),
                           SizedBox(
-                            height: 30,
+                            height: 15,
+                          ),
+                          _recommendBanner(),
+                          SizedBox(
+                            height: 10,
                           ),
                           Container(
                             alignment: Alignment.centerLeft,
@@ -152,24 +156,29 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           SizedBox(
-                            height: 15,
+                            height: 5,
                           ),
                         ],
                       ),
                     ),
                     SizedBox(
-                      height: 220,
+                      height: 210,
                       child: ListView(
                         physics: BouncingScrollPhysics(),
                         scrollDirection: Axis.horizontal,
                         padding: EdgeInsets.only(left: 18),
                         children: [
                           _detailCard(Color(0xFFFE7549), Color(0xFFFF2E68),
-                              "Mean", "平均", meanResult),
-                          _detailCard(Color(0xFF1353F3), Color(0xFF44C2FF),
-                              "Variance", "分散", varianceResult),
+                              "Mean", "平均", meanResult, "people/hour"),
+                          _detailCard(
+                              Color(0xFF1353F3),
+                              Color(0xFF44C2FF),
+                              "Variance",
+                              "分散",
+                              varianceResult,
+                              "people^2/hour"),
                           _detailCard(Color(0xFF16D285), Color(0xFF3DEF8F),
-                              "Mean", "平均", 5),
+                              "Max", "最大値", 29, "people"),
                         ],
                       ),
                     )
@@ -192,7 +201,7 @@ class _HomePageState extends State<HomePage> {
     double deviceWidth = MediaQuery.of(context).size.width;
 
     showModalBottomSheet(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.blue[600],
       isScrollControlled: true,
       context: context,
       shape: RoundedRectangleBorder(
@@ -227,14 +236,27 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Expanded(
                       child: TextField(
+                        cursorColor: Colors.blue[200],
                         decoration: InputDecoration(hintText: '人数'),
                         autofocus: true,
                         controller: _inputNumberController,
                         keyboardType: TextInputType.number,
                       ),
                     ),
-                    TextButton(
-                        onPressed: addDataToFirestore, child: Text("submit")),
+                    ElevatedButton(
+                      onPressed: addDataToFirestore,
+                      child: Text(
+                        "Submit",
+                        style: GoogleFonts.museoModerno(
+                          fontSize: 15,
+                          color: Colors.white,
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.blue[400],
+                        onPrimary: Colors.white,
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -265,15 +287,8 @@ class _HomePageState extends State<HomePage> {
     _inputNumberController.clear();
   }
 
-  Widget _detailCard(
-      Color color1, Color color2, String title1, String title2, double value) {
-    String unit = "";
-    if (title1 == "Mean") {
-      unit = "people/hour";
-    } else if (title1 == "Variance") {
-      unit = "people^2/hour";
-    }
-
+  Widget _detailCard(Color color1, Color color2, String title1, String title2,
+      double value, String unit) {
     return Container(
       margin: EdgeInsets.only(right: 8),
       width: 130,
@@ -314,9 +329,10 @@ class _HomePageState extends State<HomePage> {
               child: Text(
                 value.toInt().toString(),
                 style: GoogleFonts.museoModerno(
-                  fontSize: 80,
+                  fontSize: 78,
                   color: Colors.white,
                   letterSpacing: -3,
+                  height: 1.4,
                 ),
               ),
             ),
@@ -332,6 +348,52 @@ class _HomePageState extends State<HomePage> {
             )
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _recommendBanner() {
+    return Container(
+      height: 85,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(30),
+        color: Color(0xFF1B1B1F),
+      ),
+      padding: EdgeInsets.only(left: 20, right: 25),
+      child: Row(
+        // crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Recommend",
+                style: GoogleFonts.museoModerno(
+                  fontSize: 21,
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                "今日お風呂に入るおすすめの時刻",
+                style: TextStyle(
+                  fontSize: 10,
+                  color: Colors.grey,
+                  height: 0.9,
+                ),
+              ),
+            ],
+          ),
+          Text(
+            "19:00",
+            style: GoogleFonts.museoModerno(
+              fontSize: 43,
+              color: Colors.white,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ],
       ),
     );
   }

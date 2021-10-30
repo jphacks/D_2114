@@ -12,14 +12,15 @@ Widget chartBody(List actualData, List predictedData) {
   List<charts.Series<DataPoint, DateTime>> seriesList = [
     charts.Series<DataPoint, DateTime>(
       id: 'actualData',
-      colorFn: (_, __) => charts.ColorUtil.fromDartColor((Colors.orange[300])!),
+      colorFn: (_, __) =>
+          charts.ColorUtil.fromDartColor((Colors.lightBlue[300])!),
       domainFn: (DataPoint datapoint, _) => datapoint.time,
       measureFn: (DataPoint datapoint, _) => datapoint.value,
       data: actualDataPointList,
     ),
     charts.Series<DataPoint, DateTime>(
       id: 'predictedData',
-      colorFn: (_, __) => charts.ColorUtil.fromDartColor((Colors.white)),
+      colorFn: (_, __) => charts.ColorUtil.fromDartColor((Colors.red[300])!),
       domainFn: (DataPoint datapoint, _) => datapoint.time,
       measureFn: (DataPoint datapoint, _) => datapoint.value,
       data: predictedDataPointList,
@@ -33,22 +34,22 @@ Widget chartBody(List actualData, List predictedData) {
     domainAxis: charts.DateTimeAxisSpec(
       renderSpec: charts.SmallTickRendererSpec(
         labelStyle: charts.TextStyleSpec(
-          fontSize: 14,
-          color: charts.ColorUtil.fromDartColor((Colors.grey[400])!),
+          fontSize: 13,
+          color: charts.ColorUtil.fromDartColor((Colors.blueGrey[200])!),
         ),
         lineStyle: charts.LineStyleSpec(
-          color: charts.ColorUtil.fromDartColor((Colors.grey[200])!),
+          color: charts.ColorUtil.fromDartColor((Colors.grey[800])!),
         ),
       ),
     ),
     primaryMeasureAxis: charts.NumericAxisSpec(
       renderSpec: charts.GridlineRendererSpec(
         labelStyle: charts.TextStyleSpec(
-          fontSize: 14,
-          color: charts.ColorUtil.fromDartColor((Colors.grey[400])!),
+          fontSize: 13,
+          color: charts.ColorUtil.fromDartColor((Colors.blueGrey[200])!),
         ),
         lineStyle: charts.LineStyleSpec(
-          color: charts.ColorUtil.fromDartColor((Colors.grey[200])!),
+          color: charts.ColorUtil.fromDartColor((Colors.grey[800])!),
         ),
       ),
     ),
