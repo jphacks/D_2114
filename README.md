@@ -88,7 +88,7 @@ urlをここに
 <a href="https://ibb.co/bXBthYg"><img src="https://i.ibb.co/dD2Z9X0/4.png" alt="4" border="0"></a>
 <a href="https://ibb.co/31KtY8w"><img src="https://i.ibb.co/G7mg31X/5.png" alt="5" border="0"></a>
 
-<a href="https://ibb.co/gwwPmZw"><img src="https://i.ibb.co/sQQ6b9Q/app-data-input.png" alt="app-data-input" border="0"></a>
+<a href="https://ibb.co/ZNnSQhP"><img src="https://i.ibb.co/QX2kW6R/how-to-use-step1.png" alt="how-to-use-step1" border="0"></a>
 
 <a href="https://ibb.co/vxbH56v"><img src="https://i.ibb.co/WWQ694p/how-to-use-step-2.png" alt="how-to-use-step-2" border="0"></a>
 
