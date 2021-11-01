@@ -4,13 +4,13 @@
 
 <a href="https://ibb.co/W2g3F5K"><img src="https://i.ibb.co/S3Rx0yv/app-overview.png" alt="app-overview" border="0"></a>
 ## デモ
-### 動画
+### 動画URL
 
 字幕をONにしてご覧ください
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Gq6q32CLxqI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/Gq6q32CLxqI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ -->
 
-url
 https://youtu.be/Gq6q32CLxqI
 
 ### 実際に動作するプロダクト(Webバージョン)
