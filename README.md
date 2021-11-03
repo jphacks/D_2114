@@ -6,12 +6,9 @@
 ## デモ
 ### 動画URL
 
-字幕をONにしてご覧ください
+[![](https://img.youtube.com/vi/hxJka_VIsVI/0.jpg)](https://www.youtube.com/watch?v=hxJka_VIsVI)
 
-<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/Gq6q32CLxqI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
- -->
-
-https://youtu.be/Gq6q32CLxqI
+https://youtu.be/hxJka_VIsVI
 
 ### 実際に動作するプロダクト(Webバージョン)
 urlをここに
