@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_ml/charts/chart_widget.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -329,12 +328,15 @@ class _HomePageState extends State<HomePage> {
               child: Text(
                 value.toInt().toString(),
                 style: GoogleFonts.museoModerno(
-                  fontSize: 78,
+                  fontSize: 72,
                   color: Colors.white,
-                  letterSpacing: -3,
+                  letterSpacing: -5,
                   height: 1.4,
                 ),
               ),
+            ),
+            SizedBox(
+              height: 7,
             ),
             Align(
               alignment: Alignment.centerRight,
